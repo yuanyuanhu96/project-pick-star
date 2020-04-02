@@ -1,7 +1,7 @@
 console.log('claw loaded');
 
 class Claw {
-  status = 0;
+  status = 0; // 0: begin place 1: turning 2 releasing
 
   //what dose this called, why comma
   //function or parameters? status recorder
@@ -12,7 +12,7 @@ class Claw {
 
   //   angle; speed; 变量应该放在哪？
   angle = 0;
-  length = 0;
+  initialLength = 50;
   growingSpeed = 1;
   growingTime = 0;
   //
@@ -29,8 +29,6 @@ class Claw {
     this.draw();
   }
 
-  statusRecorder() {}
-
   //    this.flexibleEnd.x2 = this.fixedEnd.x1 + this.length; didn't work, because of this?
   /* for  looking back
   getEnd() {
@@ -43,14 +41,17 @@ class Claw {
     console.log('y2 =', this.flexibleEnd.y2);
   }
 */
+  statusCheck() {
+    if (this.status == 2) {
+      this.growingTime += 1;
+    }
+  }
 
   getEnd() {
-    length = this.growingSpeed * this.growingTime;
+    length = this.initialLength + this.growingSpeed * this.growingTime;
     console.log('length is', length);
-    this.flexibleEnd.x2 =
-      this.fixedEnd.x1 + this.growingTime * this.growingSpeed;
-    this.flexibleEnd.y2 =
-      this.fixedEnd.y1 + this.growingTime * this.growingSpeed;
+    this.flexibleEnd.x2 = this.fixedEnd.x1 + length;
+    this.flexibleEnd.y2 = this.fixedEnd.y1 + length;
   }
 
   //draw path from fixedEnd and lexibleEnd
@@ -70,7 +71,7 @@ class Claw {
   }
 
   tick() {
-    this.growingTime += 1;
+    this.statusCheck();
     this.getEnd();
     this.draw();
   }
