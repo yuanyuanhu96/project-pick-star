@@ -1,4 +1,4 @@
-console.log('claw loaded');
+// console.log('claw loaded');
 
 class Claw {
   status = 0; // 0: begin place 1: turning 2 releasing
@@ -24,7 +24,7 @@ class Claw {
 
   //if undefined?
   constructor(status, growingSpeed, growingTime) {
-    console.log('constructing claw');
+    // console.log('constructing claw');
     this.getEnd();
     this.draw();
   }
@@ -42,7 +42,14 @@ class Claw {
   }
 */
   statusCheck() {
-    if (this.status == 2) {
+    // status = window.status;
+    // console.log('claw status', status);
+    // console.log('window.status', window.status);
+    if (status == 1) {
+      this.turningTime += 1;
+    }
+
+    if (status == 2) {
       this.growingTime += 1;
     }
   }
@@ -59,10 +66,10 @@ class Claw {
     console.log('drawing claw');
 
     ctx.beginPath();
-    console.log('x1 =', this.fixedEnd.x1);
-    console.log('y1 =', this.fixedEnd.y1);
-    console.log('x2 =', this.flexibleEnd.x2);
-    console.log('y2 =', this.flexibleEnd.y2);
+    // console.log('x1 =', this.fixedEnd.x1);
+    // console.log('y1 =', this.fixedEnd.y1);
+    // console.log('x2 =', this.flexibleEnd.x2);
+    // console.log('y2 =', this.flexibleEnd.y2);
 
     ctx.moveTo(this.fixedEnd.x1, this.fixedEnd.y1);
     ctx.lineTo(this.flexibleEnd.x2, this.flexibleEnd.y2);
