@@ -28,7 +28,7 @@ class Claw {
 
   //draw path from fixedEnd and lexibleEnd
   draw() {
-begi
+//begi
 
   }
 
