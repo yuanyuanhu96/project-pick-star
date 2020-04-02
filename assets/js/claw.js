@@ -31,10 +31,6 @@ class Claw {
 
   statusRecorder() {}
 
-  tick() {}
-
-  turn() {}
-
   //    this.flexibleEnd.x2 = this.fixedEnd.x1 + this.length; didn't work, because of this?
   /* for  looking back
   getEnd() {
@@ -66,5 +62,10 @@ class Claw {
     ctx.lineTo(this.flexibleEnd.x2, this.flexibleEnd.y2);
     ctx.strokeStyle = 'black';
     ctx.stroke();
+  }
+
+  tick() {
+    this.getEnd();
+    this.draw();
   }
 }
