@@ -11,8 +11,8 @@ class Claw {
   };
 
   flexibleEnd = {
-    x1: 250,
-    y1: 250
+    x2: 270,
+    y2: 270
   };
 
   //   angle; speed; 变量应该放在哪？
@@ -28,12 +28,12 @@ class Claw {
 
   //draw path from fixedEnd and lexibleEnd
   draw() {
-//begi
+    console.log('drawing claw');
 
+    ctx.beginPath();
+    ctx.moveTo(this.fixedEnd.x1, this.fixedEnd.y1);
+    ctx.lineTo(this.flexibleEnd.x2, this.flexibleEnd.y2);
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
   }
-
-  flexibleEnd = {
-    x2: 250,
-    y2: 250
-  };
 }
