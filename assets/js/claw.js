@@ -14,7 +14,7 @@ class Claw {
   angle = 0;
   length = 0;
   growingSpeed = 1;
-  growingTime = 100;
+  growingTime = 0;
   //
 
   flexibleEnd = {
@@ -47,10 +47,10 @@ class Claw {
   getEnd() {
     length = this.growingSpeed * this.growingTime;
     console.log('length is', length);
-    this.flexibleEnd.x2 = this.fixedEnd.x1 + length;
-    console.log('x2 =', this.flexibleEnd.x2);
-    this.flexibleEnd.y2 = this.fixedEnd.y1 + length;
-    console.log('y2 =', this.flexibleEnd.y2);
+    this.flexibleEnd.x2 =
+      this.fixedEnd.x1 + this.growingTime * this.growingSpeed;
+    this.flexibleEnd.y2 =
+      this.fixedEnd.y1 + this.growingTime * this.growingSpeed;
   }
 
   //draw path from fixedEnd and lexibleEnd
@@ -58,6 +58,11 @@ class Claw {
     console.log('drawing claw');
 
     ctx.beginPath();
+    console.log('x1 =', this.fixedEnd.x1);
+    console.log('y1 =', this.fixedEnd.y1);
+    console.log('x2 =', this.flexibleEnd.x2);
+    console.log('y2 =', this.flexibleEnd.y2);
+
     ctx.moveTo(this.fixedEnd.x1, this.fixedEnd.y1);
     ctx.lineTo(this.flexibleEnd.x2, this.flexibleEnd.y2);
     ctx.strokeStyle = 'black';
@@ -65,6 +70,7 @@ class Claw {
   }
 
   tick() {
+    this.growingTime += 1;
     this.getEnd();
     this.draw();
   }

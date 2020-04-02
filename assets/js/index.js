@@ -7,7 +7,7 @@ const claw = new Claw();
 
 const tick = () => {
   console.log('Tick', tick);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
   claw.tick();
 
   window.requestAnimationFrame(tick);
