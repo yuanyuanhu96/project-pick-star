@@ -10,17 +10,23 @@ class Claw {
     y1: 250
   };
 
-  flexibleEnd = {
-    x2: 270,
-    y2: 270
-  };
-
   //   angle; speed; 变量应该放在哪？
+  angle = 0;
+  speed = 1;
+  length = 0;
+//
+
+  flexibleEnd = {
+    x2,
+    y2
+  };
 
   constructor() {
     console.log('constructing claw');
     this.draw();
   }
+
+  statusRecorder () {}
 
   turn() {}
 
