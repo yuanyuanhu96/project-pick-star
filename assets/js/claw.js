@@ -12,25 +12,50 @@ class Claw {
 
   //   angle; speed; 变量应该放在哪？
   angle = 0;
-  speed = 1;
   length = 0;
-//
+  growingSpeed = 1;
+  growingTime = 100;
+  //
 
   flexibleEnd = {
-    x2,
-    y2
+    x2: 250,
+    y2: 250
   };
 
-  constructor() {
+  //if undefined?
+  constructor(status, growingSpeed, growingTime) {
     console.log('constructing claw');
+    this.getEnd();
     this.draw();
   }
 
-  statusRecorder () {}
+  statusRecorder() {}
+
+  tick() {}
 
   turn() {}
 
-  changeEnd() {}
+  //    this.flexibleEnd.x2 = this.fixedEnd.x1 + this.length; didn't work, because of this?
+  /* for  looking back
+  getEnd() {
+    length = this.growingSpeed * this.growingTime;
+    console.log('length is', length);
+    this.flexibleEnd.x2 = this.fixedEnd.x1 + this.length;
+    console.log('x2 =', this.flexibleEnd.x2);
+
+    this.flexibleEnd.y2 = this.fixedEnd.y1 + this.length;
+    console.log('y2 =', this.flexibleEnd.y2);
+  }
+*/
+
+  getEnd() {
+    length = this.growingSpeed * this.growingTime;
+    console.log('length is', length);
+    this.flexibleEnd.x2 = this.fixedEnd.x1 + length;
+    console.log('x2 =', this.flexibleEnd.x2);
+    this.flexibleEnd.y2 = this.fixedEnd.y1 + length;
+    console.log('y2 =', this.flexibleEnd.y2);
+  }
 
   //draw path from fixedEnd and lexibleEnd
   draw() {
