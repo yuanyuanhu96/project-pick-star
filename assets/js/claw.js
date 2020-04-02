@@ -5,13 +5,19 @@ class Claw {
 
   //what dose this called, why comma
   //function or parameters? status recorder
+
   fixedEnd = {
     x1: 250,
     y1: 250
   };
 
   //   angle; speed; 变量应该放在哪？
-  angle = 0;
+  //不用initial可以吗
+  initialAngle = 1;
+  turningSpeed = 0.1;
+  turningTime = 0;
+
+  length;
   initialLength = 50;
   growingSpeed = 1;
   growingTime = 0;
@@ -22,10 +28,10 @@ class Claw {
     y2: 250
   };
 
-  //if undefined?
-  constructor(status, growingSpeed, growingTime) {
+  //if undefined?//这个括号里的究竟是什么
+  constructor(status, turningSpeed, turningTime, growingSpeed, growingTime) {
     // console.log('constructing claw');
-    this.getEnd();
+    //    this.getEnd();
     this.draw();
   }
 
@@ -41,12 +47,15 @@ class Claw {
     console.log('y2 =', this.flexibleEnd.y2);
   }
 */
+
+  //order of status check
   statusCheck() {
     // status = window.status;
     // console.log('claw status', status);
     // console.log('window.status', window.status);
     if (status == 1) {
       this.turningTime += 1;
+      //为什么不能写这里getAngle();
     }
 
     if (status == 2) {
@@ -54,12 +63,26 @@ class Claw {
     }
   }
 
-  getEnd() {
-    length = this.initialLength + this.growingSpeed * this.growingTime;
+  getLength() {
+    let length = this.initialLength + this.growingSpeed * this.growingTime;
     console.log('length is', length);
-    this.flexibleEnd.x2 = this.fixedEnd.x1 + length;
-    this.flexibleEnd.y2 = this.fixedEnd.y1 + length;
+    return length;
   }
+
+  getAngle() {
+    let angle = this.initialAngle + this.turningSpeed * this.turningTime;
+    console.log('angle is', angle);
+    this.flexibleEnd.x2 = this.fixedEnd.x1 + this.length * Math.cos(angle);
+
+    this.flexibleEnd.y2 = this.fixedEnd.y1 + this.length * Math.sin(angle);
+  }
+
+  //   getEnd() {
+  //     let length = this.initialLength + this.growingSpeed * this.growingTime;
+  //     console.log('length is', length);
+  //     this.flexibleEnd.x2 = this.fixedEnd.x1 + length;
+  //     this.flexibleEnd.y2 = this.fixedEnd.y1 + length;
+  //   }
 
   //draw path from fixedEnd and lexibleEnd
   draw() {
@@ -79,7 +102,11 @@ class Claw {
 
   tick() {
     this.statusCheck();
-    this.getEnd();
+    this.length = this.getLength();
+
+    this.getAngle();
+
+    //   this.getEnd();
     this.draw();
   }
 }
