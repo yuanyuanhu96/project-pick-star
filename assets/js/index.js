@@ -9,7 +9,7 @@ const object3 = new Object(0, 20);
 //console.log('object', object);
 
 const multiObjects = new MultiObjects(0, 20);
-const objectsList = new ObjectsList(0, 3);
+//const objectsList = new ObjectsList(0, 3);
 
 const tick = () => {
   //console.log('Tick', tick);
@@ -24,5 +24,3 @@ const tick = () => {
 };
 
 tick();
-
-

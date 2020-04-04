@@ -2,11 +2,17 @@ console.log('object loaded');
 
 class MultiObjects {
   type;
-  radius;
-  x;
-  y;
+  needCreate;
+  created = 0;
+  objects;
 
-  constructor(type, radius, x, y) {
+  constructor(type, needCreate) {
+    this.type = type;
+    this.needCreate = needCreate;
+    this.objects = new Array();
+  }
+
+  objectConstructor(type, radius, x, y) {
     console.log('constructing an object');
     this.type = type;
     this.radius = radius;
