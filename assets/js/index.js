@@ -9,6 +9,7 @@ const tick = () => {
   //console.log('Tick', tick);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   claw.tick();
+  object.tick();
 
   window.requestAnimationFrame(tick);
 };
