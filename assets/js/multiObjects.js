@@ -38,15 +38,14 @@ class MultiObjects {
     console.log(this);
 
     this.drawCircle();
-    
   }
 
   drawCircle() {
     console.log(
-      'drawing a circle from the object',
+      'drawing a circle from the object in multiObject',
+      this.radius,
       this.x,
-      this.y,
-      this.radius
+      this.y
     );
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);

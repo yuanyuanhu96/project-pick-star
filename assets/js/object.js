@@ -41,12 +41,12 @@ class Object {
   }
 
   drawCircle() {
-    console.log(
-      'drawing a circle from the object',
-      this.x,
-      this.y,
-      this.radius
-    );
+    // console.log(
+    //   'drawing a circle from the object',
+    //   this.radius
+    //   this.x,
+    //   this.y,
+    // );
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.strokeStyle = 'red';
