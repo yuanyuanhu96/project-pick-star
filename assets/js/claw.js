@@ -37,13 +37,13 @@ class Claw {
 
   getLength() {
     let length = this.initialLength + this.growingSpeed * this.growingTime;
-    console.log('length is', length);
+    //console.log('length is', length);
     return length;
   }
 
   getAngle() {
     let angle = this.initialAngle + this.turningSpeed * this.turningTime;
-    console.log('angle is', angle);
+    //console.log('angle is', angle);
     return angle;
   }
 
