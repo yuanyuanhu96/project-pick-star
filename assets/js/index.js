@@ -8,11 +8,12 @@ const object2 = new Object(0, 20);
 const object3 = new Object(0, 20);
 //console.log('object', object);
 
-const multiObjects = new MultiObjects(0, 20);
+const multiObjects = new MultiObjects(0, 5);
+console.log('MultiObjects is', multiObjects);
+
 //const objectsList = new ObjectsList(0, 3);
 
 const tick = () => {
-  //console.log('Tick', tick);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   claw.tick();
   object.tick();

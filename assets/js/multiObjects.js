@@ -10,6 +10,10 @@ class MultiObjects {
     this.type = type;
     this.needCreate = needCreate;
     this.objects = new Array();
+    this.objects[0] = new window.Object(0, 40);
+    this.objects[1] = new window.Object(0, 40);
+    this.objects[2] = new window.Object(0, 40);
+    console.log('MultiObjects created', this.objects);
   }
 
   objectConstructor(type, radius, x, y) {
