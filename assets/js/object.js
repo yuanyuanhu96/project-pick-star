@@ -1,22 +1,9 @@
 console.log('object loaded');
-
 class Object {
   type;
   radius;
   x;
   y;
-
-  /*I don't understand the difference between constructor(type, x, y, radius) and
-  x;
-  y;
-  radius;
-  type;
- */
-  //？？？ What does constructor usually do? I didn't really make the constructer for claw
-  //Do I need to make right object wrong object different class
-  //???? if undefined why?
-
-  //draw a circle for each object for test
 
   constructor(type, radius, x, y) {
     console.log('constructing an object');
@@ -36,17 +23,10 @@ class Object {
     }
 
     console.log(this);
-
     this.drawCircle();
   }
 
   drawCircle() {
-    // console.log(
-    //   'drawing a circle from the object',
-    //   this.radius
-    //   this.x,
-    //   this.y,
-    // );
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.strokeStyle = 'red';

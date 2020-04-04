@@ -2,13 +2,12 @@ const canvas = document.querySelector('#drawing');
 const ctx = canvas.getContext('2d');
 
 const claw = new Claw();
-//object = new Object(0, 20, 50, 60);
+
 const object = new Object(0, 20);
 const object2 = new Object(0, 20);
 const object3 = new Object(0, 20);
-console.log('object', object);
+//console.log('object', object);
 
-//there should be a better way to create multiple object
 const multiObjects = new MultiObjects(0, 20);
 const objectsList = new ObjectsList(0, 3);
 
@@ -25,3 +24,5 @@ const tick = () => {
 };
 
 tick();
+
+
