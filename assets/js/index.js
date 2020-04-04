@@ -4,6 +4,9 @@ const ctx = canvas.getContext('2d');
 const claw = new Claw();
 //object = new Object(0, 20, 50, 60);
 const object = new Object(0, 20);
+const object2 = new Object(0, 20);
+//there should be a better way to create multiple object
+
 const multiObjects = new MultiObjects(0, 20);
 
 const tick = () => {
@@ -11,8 +14,8 @@ const tick = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   claw.tick();
   object.tick();
+  object2.tick();
   multiObjects.tick();
-
   window.requestAnimationFrame(tick);
 };
 
