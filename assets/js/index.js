@@ -8,6 +8,11 @@ const object2 = new Object(0, 20);
 const object3 = new Object(0, 20);
 //console.log('object', object);
 
+var objects = new Array();
+objects[0] = new Object(0, 20);
+objects[1] = new Object(0, 20);
+objects[2] = new Object(0, 20);
+
 const multiObjects = new MultiObjects(0, 5);
 console.log('MultiObjects is', multiObjects);
 
@@ -19,6 +24,10 @@ const tick = () => {
   object.tick();
   object2.tick();
   object3.tick();
+
+  for (var i = 0; i < objects.length; i++) {
+    objects[i].tick();
+  }
 
   multiObjects.tick();
   window.requestAnimationFrame(tick);
