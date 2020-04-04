@@ -19,8 +19,20 @@ class Object {
     console.log('constructing an object');
     this.type = type;
     this.radius = radius;
-    this.x = x;
-    this.y = y;
+
+    if (x !== undefined) {
+      this.x = x;
+    } else {
+      this.x = 0.2 * canvas.width;
+    }
+
+    if (y !== undefined) {
+      this.y = y;
+    } else {
+      this.y = 0.2 * canvas.width;
+    }
+    console.log('canvas.width', canvas.width);
+
     console.log(this);
   }
 }
