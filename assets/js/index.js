@@ -3,10 +3,9 @@ const ctx = canvas.getContext('2d');
 
 const claw = new Claw();
 
-const object = new Star(0, 20);
 //console.log('object', object);
 
-var stars = createStars(0, 20);
+var stars = createStars(0, 10);
 
 function createStars(type, number) {
   const stars = [];
@@ -23,13 +22,11 @@ function createStars(type, number) {
 const tick = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   claw.tick();
-  object.tick();
 
-  for (var i = 0; i < objects.length; i++) {
-    objects[i].tick();
+  for (var i = 0; i < stars.length; i++) {
+    stars[i].tick();
   }
 
-  multiObjects.tick();
   window.requestAnimationFrame(tick);
 };
 

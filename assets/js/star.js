@@ -4,22 +4,24 @@ class Star {
   radius;
   x;
   y;
+  coordinate;
 
   constructor(type, radius, x, y) {
     console.log('constructing an object');
     this.type = type;
     this.radius = radius;
+    this.coordinate = randomCoordinate();
 
     if (x !== undefined) {
       this.x = x;
     } else {
-      this.x = Math.round(Math.random() * canvas.width);
+      this.x = this.coordinate[0];
     }
 
     if (y !== undefined) {
       this.y = y;
     } else {
-      this.y = Math.round(Math.random() * canvas.height);
+      this.y = this.coordinate[1];
     }
 
     console.log(this);
