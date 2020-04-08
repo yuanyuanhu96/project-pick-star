@@ -11,9 +11,7 @@ function randomCoordinate() {
   return coordinate;
 }
 
-
-
-//为什么不能相互调用
+//为什么不能相互调用 需要优化
 function checkRange(coordinate) {
   const r = 20;
   let realWidth = canvas.width - 2 * r;
@@ -34,14 +32,8 @@ function checkRange(coordinate) {
     coordinate = checkRange(coordinate);
   }
 
-  return coordinate;
+    return coordinate;
 }
-
-
-
-
-
-
 
 function createStars(type, number) {
   const stars = [];
