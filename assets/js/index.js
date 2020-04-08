@@ -6,13 +6,17 @@ const claw = new Claw();
 const object = new Star(0, 20);
 //console.log('object', object);
 
-var objects = new Array();
-objects[0] = new Star(0, 20);
-objects[1] = new Star(0, 20);
-objects[2] = new Star(0, 20);
+var stars = createStars(0, 20);
 
-const multiObjects = new MultiObjects(0, 5);
-console.log('MultiObjects is', multiObjects);
+function createStars(type, number) {
+  const stars = [];
+
+  for (var i = 0; i < number; i++) {
+    stars.push(new Star(0, 20));
+  }
+
+  return stars;
+}
 
 //const objectsList = new ObjectsList(0, 3);
 
