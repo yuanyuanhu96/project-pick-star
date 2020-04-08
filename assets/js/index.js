@@ -1,7 +1,7 @@
 const canvas = document.querySelector('#drawing');
 const ctx = canvas.getContext('2d');
 
-var stars = createStars(0, 1000);
+var stars = createStars(0, 20);
 const claw = new Claw(stars);
 
 

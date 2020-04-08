@@ -17,6 +17,9 @@ class Claw {
 
   touchStar = false;
 
+  starPicked;
+  starPickedId;
+
   constructor(
     stars,
     status,
@@ -82,8 +85,6 @@ class Claw {
   }
 
   ifTouchStar() {
-    console.log('touch star?', this.touchStar);
-
     //need to end while true
     for (var i = 0; i < stars.length; i++) {
       let distanceX = Math.abs(this.stars[i].x - this.flexibleEnd.x2);
@@ -92,9 +93,16 @@ class Claw {
         this.touchStar = true;
         status = 3; //定义域是什么
         console.log('touch star?', this.touchStar);
+        this.starPicked = this.stars[i];
+        this.starPickedId = i;
       }
     }
-    return this.touchStar;
+  }
+
+  moveStar() {
+    let i = this.starPickedId;
+    this.stars[i].x = this.flexibleEnd.x2;
+    this.stars[i].y = this.flexibleEnd.y2;
   }
 
   tick() {
@@ -103,6 +111,13 @@ class Claw {
     this.angle = this.getAngle();
     this.getEnd();
     this.draw();
-    this.ifTouchStar();
+
+    if (status == 2) {
+      this.ifTouchStar();
+    }
+
+    if (status == 3) {
+      this.moveStar();
+    }
   }
 }
