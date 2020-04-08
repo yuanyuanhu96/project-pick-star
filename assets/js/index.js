@@ -3,7 +3,6 @@ const ctx = canvas.getContext('2d');
 
 const claw = new Claw();
 
-//console.log('object', object);
 
 var stars = createStars(0, 10);
 
@@ -17,7 +16,6 @@ function createStars(type, number) {
   return stars;
 }
 
-//const objectsList = new ObjectsList(0, 3);
 
 const tick = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);

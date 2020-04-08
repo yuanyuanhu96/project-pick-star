@@ -1,5 +1,3 @@
-console.log('status switch');
-
 const statusButton = document.querySelector('#status-button');
 const statusShow = document.querySelector('#status-show');
 

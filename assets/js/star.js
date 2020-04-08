@@ -1,4 +1,3 @@
-console.log('object loaded');
 class Star {
   type;
   radius;
@@ -7,7 +6,6 @@ class Star {
   coordinate;
 
   constructor(type, radius, x, y) {
-    console.log('constructing an object');
     this.type = type;
     this.radius = radius;
     this.coordinate = randomCoordinate();
@@ -24,7 +22,7 @@ class Star {
       this.y = this.coordinate[1];
     }
 
-    console.log(this);
+    //console.log(this);
     this.drawCircle();
   }
 
