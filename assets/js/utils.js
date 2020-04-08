@@ -11,7 +11,12 @@ function checkRange(coordinate) {
   let x = coordinate[0];
   let y = coordinate[1];
 
-  if (x >= 150 && x <= 350 && y >= 150 && y <= 350) {
+  if (
+    x >= 0.5 * canvas.width - 80 &&
+    x <= 0.5 * canvas.width + 80 &&
+    y >= 0.5 * canvas.height - 80 &&
+    y <= 0.5 * canvas.height + 80
+  ) {
     x = Math.round(Math.random() * canvas.width);
     y = Math.round(Math.random() * canvas.height);
     coordinate = [x, y];

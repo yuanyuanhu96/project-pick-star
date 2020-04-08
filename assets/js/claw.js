@@ -1,7 +1,7 @@
 class Claw {
   stars;
   status = 0;
-  fixedEnd = { x1: 250, y1: 250 };
+  fixedEnd = { x1: 0.5 * canvas.width, y1: 0.5 * canvas.height };
 
   angle;
   initialAngle = 1;
