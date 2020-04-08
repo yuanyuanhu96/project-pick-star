@@ -1,13 +1,24 @@
 function randomCoordinate() {
-  let x = Math.round(Math.random() * canvas.width);
-  let y = Math.round(Math.random() * canvas.height);
+  const r = 20;
+  let realWidth = canvas.width - 2 * r;
+  let realHeight = canvas.height - 2 * r;
+
+  let x = Math.round(Math.random() * realWidth) + r;
+  let y = Math.round(Math.random() * realHeight) + r;
 
   let coordinate = [x, y];
   coordinate = checkRange(coordinate);
   return coordinate;
 }
 
+
+
+//为什么不能相互调用
 function checkRange(coordinate) {
+  const r = 20;
+  let realWidth = canvas.width - 2 * r;
+  let realHeight = canvas.height - 2 * r;
+
   let x = coordinate[0];
   let y = coordinate[1];
 
@@ -17,14 +28,20 @@ function checkRange(coordinate) {
     y >= 0.5 * canvas.height - 80 &&
     y <= 0.5 * canvas.height + 80
   ) {
-    x = Math.round(Math.random() * canvas.width);
-    y = Math.round(Math.random() * canvas.height);
+    let x = Math.round(Math.random() * realWidth) + r;
+    let y = Math.round(Math.random() * realHeight) + r;
     coordinate = [x, y];
     coordinate = checkRange(coordinate);
   }
 
   return coordinate;
 }
+
+
+
+
+
+
 
 function createStars(type, number) {
   const stars = [];
