@@ -1,5 +1,5 @@
 console.log('object loaded');
-class Object {
+class Star {
   type;
   radius;
   x;
