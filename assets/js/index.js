@@ -2,14 +2,14 @@ const canvas = document.querySelector('#drawing');
 const ctx = canvas.getContext('2d');
 
 const starsRequirement = [
-  [0, 250],
-  [1, 250],
-  [2, 250],
-  [3, 250],
+  [0, 4],
+  [1, 4],
+  [2, 8],
+  [3, 9],
 ];
 
-const pickedCoordinate = starCoordinate();
-const stars = createStars(starsRequirement, pickedCoordinate);
+//const pickedCoordinate = starCoordinate();
+const stars = createStars(starsRequirement);
 
 const claw = new Claw(stars);
 

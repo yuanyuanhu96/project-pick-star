@@ -1,3 +1,5 @@
+/*
+
 function starCoordinate() {
   const r = 20;
 
@@ -5,8 +7,8 @@ function starCoordinate() {
   const pickedCoordinate = [];
 
   //Generate all avaliable Coordinate
-  for (var ix = r; ix < canvas.width - r; ix++) {
-    for (var iy = r; iy < canvas.height - r; iy++) {
+  for (var ix = r; ix < canvas.width - r; ix += 1) {
+    for (var iy = r; iy < canvas.height - r; iy += 1) {
       //eliminate all center coordinate
       if (
         ix >= 0.5 * canvas.width - 80 &&
@@ -21,17 +23,35 @@ function starCoordinate() {
   }
 
   //Pick from avaliable Coordinate
-  function pick(number) {
-    for (var i = 0; i < number; i++) {
-      randomIndex = Math.round(Math.random() * avaliableCoordinate.length);
-      pickedCoordinate.push(avaliableCoordinate[randomIndex]);
+
+  pickNumber = 20;
+  for (var i = 0; i < pickNumber; i++) {
+    randomIndex = Math.round(Math.random() * avaliableCoordinate.length);
+    let newCoordinate = avaliableCoordinate[randomIndex];
+    pickedCoordinate.push(newCoordinate);
+    let x = newCoordinate[0];
+    let y = newCoordinate[1];
+    let d = 2 * r;
+    //find all nearby coordinate
+    //let nearbyCoordinate = [];
+    for (var ix = x - d; ix < x + d; ix += 1) {
+      for (var iy = y - d; iy < y + d; iy += 1) {
+        //nearbyCoordinate.push([ix, iy]);
+        var pos = avaliableCoordinate.indexOf([ix, iy]);
+        avaliableCoordinate.splice(pos, 1);
+        console.log(avaliableCoordinate);
+      }
     }
   }
 
-  pick(1000);
   console.log(pickedCoordinate);
   return pickedCoordinate;
 }
+
+
+
+*/
+
 
 function randomCoordinate() {
   const r = 20;
@@ -94,6 +114,8 @@ function checkRange(coordinate, stars) {
 //   return coordinate;
 // }
 
+
+/*
 function createStars(starsRequirement, pickedCoordinate) {
   const stars = [];
 
@@ -112,17 +134,19 @@ function createStars(starsRequirement, pickedCoordinate) {
   return stars;
 }
 
-// function createStars(starsRequirement) {
-//   const stars = [];
 
-//   starsRequirement.forEach((element) => {
-//     var type = element[0];
-//     var number = element[1];
+*/
+function createStars(starsRequirement) {
+  const stars = [];
 
-//     for (var i = 0; i < number; i++) {
-//       stars.push(new Star(type, 20));
-//     }
-//   });
+  starsRequirement.forEach((element) => {
+    var type = element[0];
+    var number = element[1];
 
-//   return stars;
-// }
+    for (var i = 0; i < number; i++) {
+      stars.push(new Star(type, 20));
+    }
+  });
+
+  return stars;
+}
