@@ -3,13 +3,13 @@ const ctx = canvas.getContext('2d');
 
 const starsRequirement = [
   [0, 5],
-  [1, 15],
-  [2, 25],
-  [3, 35],
+  [1, 10],
+  [2, 15],
+  [3, 20],
 ];
 const stars = createStars(starsRequirement);
 const claw = new Claw(stars);
-
+starCoordinate();
 
 
 
