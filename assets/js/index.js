@@ -1,7 +1,13 @@
 const canvas = document.querySelector('#drawing');
 const ctx = canvas.getContext('2d');
 
-var stars = createStars(2, 10);
+const starsRequirement = [
+  [0, 5],
+  [1, 15],
+  [2, 25],
+  [3, 35],
+];
+const stars = createStars(starsRequirement);
 const claw = new Claw(stars);
 
 

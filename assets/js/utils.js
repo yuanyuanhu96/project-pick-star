@@ -35,10 +35,17 @@ function checkRange(coordinate) {
   return coordinate;
 }
 
-function createStars(type, number) {
+function createStars(starsRequirement) {
   const stars = [];
-  for (var i = 0; i < number; i++) {
-    stars.push(new Star(type, 20));
-  }
+
+  starsRequirement.forEach((element) => {
+    var type = element[0];
+    var number = element[1];
+
+    for (var i = 0; i < number; i++) {
+      stars.push(new Star(type, 20));
+    }
+  });
+
   return stars;
 }

@@ -40,7 +40,7 @@ class Star {
         break;
 
       case 2:
-        ctx.strokeStyle = 'yellow';
+        ctx.strokeStyle = 'orange';
         break;
 
       case 3:
