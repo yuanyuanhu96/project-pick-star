@@ -1,6 +1,6 @@
 class Claw {
   stars;
-  status = 0;
+  status = 0;    // 0:Haven't start, 1:turning, 2:growing, 3:picking 4: pickback
   fixedEnd = { x1: 0.5 * canvas.width, y1: 0.5 * canvas.height };
 
   angle;
@@ -40,7 +40,7 @@ class Claw {
       this.growingTime += 1;
     }
 
-    if (status == 3) {
+    if (status == 3 || status == 4) {
       this.growingTime -= 1;
     }
   }
@@ -49,7 +49,7 @@ class Claw {
     let length = this.initialLength + this.growingSpeed * this.growingTime;
 
     if (length < this.initialLength) {
-      status = 4;
+      status = 0;
     }
 
     return length;
@@ -69,7 +69,7 @@ class Claw {
       this.flexibleEnd.y2 <= 0 ||
       this.flexibleEnd.y2 >= canvas.height
     ) {
-      status = 3;
+      status = 4;
     }
   }
 

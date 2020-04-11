@@ -14,7 +14,7 @@ const tick = () => {
   for (var i = 0; i < stars.length; i++) {
     stars[i].tick();
   }
-
+console.log("status", status)
   window.requestAnimationFrame(tick);
 };
 
