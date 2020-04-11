@@ -5,3 +5,21 @@ body {
 #drawing {
   background-color: rgb(255, 255, 255);
 }
+
+.header {
+  background-color: brown;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menu {
+  background-color: rgb(255, 255, 255);
+}
+
+.timer {
+  background-color: rgb(44, 143, 44);
+}
+
+.goal {
+  background-color: rgb(218, 221, 53);
+}
