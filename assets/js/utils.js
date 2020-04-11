@@ -32,13 +32,13 @@ function checkRange(coordinate) {
     coordinate = checkRange(coordinate);
   }
 
-    return coordinate;
+  return coordinate;
 }
 
 function createStars(type, number) {
   const stars = [];
   for (var i = 0; i < number; i++) {
-    stars.push(new Star(0, 20));
+    stars.push(new Star(type, 20));
   }
   return stars;
 }

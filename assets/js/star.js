@@ -29,7 +29,29 @@ class Star {
   drawCircle() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    ctx.strokeStyle = 'red';
+
+    switch (this.type) {
+      case 0:
+        ctx.strokeStyle = 'red';
+        break;
+
+      case 1:
+        ctx.strokeStyle = 'green';
+        break;
+
+      case 2:
+        ctx.strokeStyle = 'yellow';
+        break;
+
+      case 3:
+        ctx.strokeStyle = 'blue';
+        break;
+
+      default:
+        ctx.strokeStyle = 'black';
+        break;
+    }
+
     ctx.lineWidth = 2;
     ctx.stroke();
   }
