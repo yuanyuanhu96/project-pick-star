@@ -2,16 +2,16 @@ const canvas = document.querySelector('#drawing');
 const ctx = canvas.getContext('2d');
 
 const starsRequirement = [
-  [0, 5],
-  [1, 10],
-  [2, 15],
-  [3, 20],
+  [0, 250],
+  [1, 250],
+  [2, 250],
+  [3, 250],
 ];
-const stars = createStars(starsRequirement);
+
+const pickedCoordinate = starCoordinate();
+const stars = createStars(starsRequirement, pickedCoordinate);
+
 const claw = new Claw(stars);
-starCoordinate();
-
-
 
 const tick = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -20,7 +20,7 @@ const tick = () => {
   for (var i = 0; i < stars.length; i++) {
     stars[i].tick();
   }
-console.log("status", status)
+  console.log('status', status);
   window.requestAnimationFrame(tick);
 };
 

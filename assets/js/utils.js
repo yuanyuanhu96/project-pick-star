@@ -1,11 +1,36 @@
 function starCoordinate() {
+  const r = 20;
+
   const avaliableCoordinate = [];
-  for (var ix = 0; ix < canvas.width; ix++) {
-    for (var iy = 0; iy < canvas.width; iy++) {
-      avaliableCoordinate.push([ix, iy]);
+  const pickedCoordinate = [];
+
+  //Generate all avaliable Coordinate
+  for (var ix = r; ix < canvas.width - r; ix++) {
+    for (var iy = r; iy < canvas.height - r; iy++) {
+      //eliminate all center coordinate
+      if (
+        ix >= 0.5 * canvas.width - 80 &&
+        ix <= 0.5 * canvas.width + 80 &&
+        iy >= 0.5 * canvas.height - 80 &&
+        iy <= 0.5 * canvas.height + 80
+      ) {
+      } else {
+        avaliableCoordinate.push([ix, iy]);
+      }
     }
   }
-  console.log(avaliableCoordinate);
+
+  //Pick from avaliable Coordinate
+  function pick(number) {
+    for (var i = 0; i < number; i++) {
+      randomIndex = Math.round(Math.random() * avaliableCoordinate.length);
+      pickedCoordinate.push(avaliableCoordinate[randomIndex]);
+    }
+  }
+
+  pick(1000);
+  console.log(pickedCoordinate);
+  return pickedCoordinate;
 }
 
 function randomCoordinate() {
@@ -69,7 +94,7 @@ function checkRange(coordinate, stars) {
 //   return coordinate;
 // }
 
-function createStars(starsRequirement) {
+function createStars(starsRequirement, pickedCoordinate) {
   const stars = [];
 
   starsRequirement.forEach((element) => {
@@ -77,9 +102,27 @@ function createStars(starsRequirement) {
     var number = element[1];
 
     for (var i = 0; i < number; i++) {
-      stars.push(new Star(type, 20));
+      let coordinate = pickedCoordinate.pop();
+      let x = coordinate[0];
+      let y = coordinate[1];
+      stars.push(new Star(type, 20, x, y));
     }
   });
 
   return stars;
 }
+
+// function createStars(starsRequirement) {
+//   const stars = [];
+
+//   starsRequirement.forEach((element) => {
+//     var type = element[0];
+//     var number = element[1];
+
+//     for (var i = 0; i < number; i++) {
+//       stars.push(new Star(type, 20));
+//     }
+//   });
+
+//   return stars;
+// }
