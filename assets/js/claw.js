@@ -1,6 +1,6 @@
 class Claw {
   stars;
-  status = 0;    // 0:Haven't start, 1:turning, 2:growing, 3:picking 4: pickback
+  status = 0; // 0:Haven't start, 1:turning, 2:growing, 3:picking 4: pickback
   fixedEnd = { x1: 0.5 * canvas.width, y1: 0.5 * canvas.height };
 
   angle;
@@ -93,7 +93,10 @@ class Claw {
         this.touchStar = true;
         status = 3; //定义域是什么
         console.log('touch star?', this.touchStar);
+
         this.starPicked = this.stars[i];
+        console.log('picked', this.starPicked);
+
         this.starPickedId = i;
       }
     }
