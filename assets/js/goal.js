@@ -1,20 +1,20 @@
 class Goal {
   totalType;
-  goal;
+  type;
   achiveGoal;
 
   constructor(totalType) {
     this.totalType = totalType;
     this.achiveGoal = false;
-    this.goal = this.generateGoal(totalType);
-    goalBox.innerText = this.goal;
+    this.type = this.generateGoal(totalType);
+    goalBox.innerText = this.type;
   }
 
   generateGoal(totalType) {
     //this.goal = getRandomIntInclusive(0, totalType);
 
-    let goal = Math.floor(Math.random() * (totalType + 1));
-    return goal;
+    let type = Math.floor(Math.random() * (totalType + 1));
+    return type;
   }
 
   printGoal() {}

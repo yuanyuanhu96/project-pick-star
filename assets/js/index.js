@@ -2,9 +2,9 @@ const canvas = document.querySelector('#drawing');
 const ctx = canvas.getContext('2d');
 const goalBox = document.querySelector('#goal-box');
 
-let goalNumber = goalBox.innerText;
+const goal = new Goal(3);
 
-
+console.log(goal);
 const starsRequirement = [
   [0, 4],
   [1, 4],
@@ -12,13 +12,10 @@ const starsRequirement = [
   [3, 9],
 ];
 
-const goal = new Goal(3);
-console.log(goal);
+const stars = createStars(starsRequirement);
+const claw = new Claw(stars);
 
 //const pickedCoordinate = starCoordinate();
-const stars = createStars(starsRequirement);
-
-const claw = new Claw(stars);
 
 const tick = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -32,3 +29,12 @@ const tick = () => {
 };
 
 tick();
+
+function judgement(claw, goal) {
+  let rightStar = false;
+  // rightStar = claw.picked.type == goal.type;
+
+  console.log('claw.picked.type', claw.picked.type);
+  console.log('goal.type', goal.type);
+  console.log('right star?', rightStar);
+}
