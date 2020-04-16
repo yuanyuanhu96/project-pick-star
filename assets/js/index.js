@@ -24,7 +24,8 @@ const tick = () => {
   // console.log("claw.status", claw.status);
   if (status === 3) {
     let rightStar = judgement(claw, goal);
-    console.warn(rightStar);
+    console.warn('picked the right star?', rightStar);
+    status += 1;
   }
 
   for (var i = 0; i < stars.length; i++) {

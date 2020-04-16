@@ -1,6 +1,6 @@
 class Claw {
   stars;
-  status = 0; // 0:Haven't start, 1:turning, 2:growing, 3:picking 4: emptyback
+  status = 0; // 0:Haven't start, 1:turning, 2:growing, 3:pick 4:pickback 5: emptyback
   fixedEnd = { x1: 0.5 * canvas.width, y1: 0.5 * canvas.height };
 
   angle;
@@ -40,7 +40,7 @@ class Claw {
       this.growingTime += 1;
     }
 
-    if (status == 3 || status == 4) {
+    if (status == 4 || status == 5) {
       this.growingTime -= 1;
     }
   }
@@ -69,7 +69,7 @@ class Claw {
       this.flexibleEnd.y2 <= 0 ||
       this.flexibleEnd.y2 >= canvas.height
     ) {
-      status = 4;
+      status = 5;
     }
   }
 
@@ -115,11 +115,11 @@ class Claw {
     this.getEnd();
     this.draw();
 
-    if (status == 2) {
+    if (status === 2) {
       this.ifTouchStar();
     }
 
-    if (status == 3) {
+    if (status === 4) {
       this.moveStar();
       judgement(this, goal);
     }
