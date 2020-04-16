@@ -31,6 +31,7 @@ const tick = () => {
     stars[i].tick();
   }
   console.log('status', status);
+  statusUpdate();
   window.requestAnimationFrame(tick);
 };
 
