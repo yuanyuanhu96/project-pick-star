@@ -20,6 +20,12 @@ const claw = new Claw(stars);
 const tick = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   claw.tick();
+  //claw.status different from status
+  // console.log("claw.status", claw.status);
+  if (status === 3) {
+    let rightStar = judgement(claw, goal);
+    console.warn(rightStar);
+  }
 
   for (var i = 0; i < stars.length; i++) {
     stars[i].tick();
@@ -31,10 +37,11 @@ const tick = () => {
 tick();
 
 function judgement(claw, goal) {
-  let rightStar = false;
-  // rightStar = claw.picked.type == goal.type;
+  // console.log(claw);
+  // console.log(goal);
 
-  console.log('claw.picked.type', claw.picked.type);
-  console.log('goal.type', goal.type);
-  console.log('right star?', rightStar);
+  if (claw.starPicked.type === goal.type) {
+    return true;
+  }
+  return false;
 }

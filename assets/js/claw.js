@@ -1,6 +1,6 @@
 class Claw {
   stars;
-  status = 0; // 0:Haven't start, 1:turning, 2:growing, 3:picking 4: emptyback
+  status= 0; // 0:Haven't start, 1:turning, 2:growing, 3:picking 4: emptyback
   fixedEnd = { x1: 0.5 * canvas.width, y1: 0.5 * canvas.height };
 
   angle;
@@ -121,6 +121,7 @@ class Claw {
 
     if (status == 3) {
       this.moveStar();
+      judgement(this, goal);
     }
   }
 }
