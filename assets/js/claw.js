@@ -10,7 +10,7 @@ class Claw {
 
   length;
   initialLength = 80;
-  growingSpeed = 5;
+  growingSpeed = 1;
   growingTime = 0;
 
   flexibleEnd = { x2: 250, y2: 250 };
@@ -122,7 +122,6 @@ class Claw {
     let i = this.starPickedId;
     this.stars[i].x = this.flexibleEnd.x2;
     this.stars[i].y = this.flexibleEnd.y2;
-    console.log('stars before remove', stars);
   }
 
   removeStar() {

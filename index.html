@@ -7,16 +7,46 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <header class="header">
-      <section class="menu">
-        this is menu
-        <button>MEMU</button>
-      </section>
-      <section class="timer">Time left</section>
-      <section id="goal-box">0</section>
-    </header>
-
-    <canvas id="drawing" width="450" height="800"></canvas>
+    <div class="game-area">
+      <header class="header">
+        <section class="play-pause">
+          <span class="play">PLAY</span>
+          <span class="pause">PAUSE</span>
+        </section>
+        <section class="stats">
+          <section class="level-name">Level: 2</section>
+          <section class="timer">00:30</section>
+        </section>
+        <section class="goal-box">
+          <img
+            src="./assets/img/stars/star-01.png"
+            alt="Star 1"
+            class="goal-star goal-star-1"
+          />
+          <img
+            src="./assets/img/stars/star-02.png"
+            alt="Star 2"
+            class="goal-star goal-star-2"
+          />
+          <img
+            src="./assets/img/stars/star-03.png"
+            alt="Star 3"
+            class="goal-star goal-star-3"
+          />
+          <img
+            src="./assets/img/stars/star-04.png"
+            alt="Star 4"
+            class="goal-star goal-star-4"
+          />
+          <img
+            src="./assets/img/stars/star-05.png"
+            alt="Star 5"
+            class="goal-star goal-star-5"
+          />
+        </section>
+      </header>
+      <canvas class="drawing" width="450" height="800"></canvas>
+    </div>
 
     <section class="status-show" id="status-show">0</section>
     <button class="status-button" id="status-button">status-switch</button>
@@ -26,6 +56,7 @@
     <script src="./assets/js/status-switch.js"></script>
     <script src="./assets/js/claw.js"></script>
     <script src="./assets/js/star.js"></script>
+    <script src="./assets/js/timer.js"></script>
     <script src="./assets/js/index.js"></script>
   </body>
 </html>

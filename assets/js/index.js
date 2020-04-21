@@ -1,6 +1,6 @@
-const canvas = document.querySelector('#drawing');
+const canvas = document.querySelector('.drawing');
 const ctx = canvas.getContext('2d');
-const goalBox = document.querySelector('#goal-box');
+const goalBox = document.querySelector('.goal-box');
 
 const moon = new Image();
 moon.onload = () => {
@@ -34,7 +34,7 @@ function drawRabbits() {
   );
 }
 
-const goal = new Goal(3);
+const goal = new Goal(4);
 
 console.log(goal);
 const starsRequirement = [
