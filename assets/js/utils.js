@@ -84,10 +84,10 @@ function checkRange(coordinate, stars) {
   let y = coordinate[1];
 
   if (
-    x >= 0.5 * canvas.width - 80 &&
-    x <= 0.5 * canvas.width + 80 &&
-    y >= 0.5 * canvas.height - 80 &&
-    y <= 0.5 * canvas.height + 80
+    x >= 0.5 * canvas.width - 120 &&
+    x <= 0.5 * canvas.width + 120 &&
+    y >= 0.5 * canvas.height - 120 &&
+    y <= 0.5 * canvas.height + 120
   ) {
     x = Math.round(Math.random() * realWidth) + r;
     y = Math.round(Math.random() * realHeight) + r;

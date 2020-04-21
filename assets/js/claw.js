@@ -9,7 +9,7 @@ class Claw {
   turningTime = 0;
 
   length;
-  initialLength = 50;
+  initialLength = 80;
   growingSpeed = 1;
   growingTime = 0;
 
@@ -79,7 +79,7 @@ class Claw {
     ctx.beginPath();
     ctx.moveTo(this.fixedEnd.x1, this.fixedEnd.y1);
     ctx.lineTo(this.flexibleEnd.x2, this.flexibleEnd.y2);
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = 'white';
     ctx.lineWidth = 5;
     ctx.stroke();
   }

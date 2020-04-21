@@ -3,7 +3,7 @@ body {
 }
 
 #drawing {
-  background-color: rgb(255, 255, 255);
+  background: linear-gradient(rgb(6, 0, 28), rgb(11, 0, 48), rgb(6, 0, 28));
 }
 
 .header {
