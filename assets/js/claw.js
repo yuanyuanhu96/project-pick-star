@@ -1,6 +1,6 @@
 class Claw {
   stars;
-  status = 0; // 0:Haven't start, 1:turning, 2:growing, 3:pick 4:pickback 5: emptyback
+  status = 0; // 0:Haven't start, 1:turning, 2:growing, 3:pick 4:pickback 5: emptyback 6:starback 7:no star back 8:starRemoved
   fixedEnd = { x1: 0.5 * canvas.width, y1: 0.5 * canvas.height };
 
   angle;
@@ -10,7 +10,7 @@ class Claw {
 
   length;
   initialLength = 80;
-  growingSpeed = 1;
+  growingSpeed = 5;
   growingTime = 0;
 
   flexibleEnd = { x2: 250, y2: 250 };
@@ -33,15 +33,25 @@ class Claw {
   }
 
   statusCheck() {
-    if (status == 1) {
+    if (status === 1) {
       this.turningTime += 1;
     }
-    if (status == 2) {
+    if (status === 2) {
       this.growingTime += 1;
     }
 
-    if (status == 4 || status == 5) {
+    if (status === 4 || status === 5) {
       this.growingTime -= 1;
+    }
+    if (status === 6) {
+      this.removeStar();
+      status = 0;
+      this.growingTime = 0;
+    }
+
+    if (status === 7) {
+      status = 0;
+      this.growingTime = 0;
     }
   }
 
@@ -49,7 +59,13 @@ class Claw {
     let length = this.initialLength + this.growingSpeed * this.growingTime;
 
     if (length < this.initialLength) {
-      status = 0;
+      if (status === 4) {
+        status = 6;
+      }
+      if (status === 5) {
+        status = 7;
+      }
+      //  concole.log(growingTime);
     }
 
     return length;
@@ -79,7 +95,7 @@ class Claw {
     ctx.beginPath();
     ctx.moveTo(this.fixedEnd.x1, this.fixedEnd.y1);
     ctx.lineTo(this.flexibleEnd.x2, this.flexibleEnd.y2);
-    ctx.strokeStyle = 'white';
+    ctx.strokeStyle = 'gray';
     ctx.lineWidth = 5;
     ctx.stroke();
   }
@@ -106,6 +122,12 @@ class Claw {
     let i = this.starPickedId;
     this.stars[i].x = this.flexibleEnd.x2;
     this.stars[i].y = this.flexibleEnd.y2;
+    console.log('stars before remove', stars);
+  }
+
+  removeStar() {
+    let i = this.starPickedId;
+    let removedStar = this.stars.splice(i, 1);
   }
 
   tick() {

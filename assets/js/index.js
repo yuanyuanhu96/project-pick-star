@@ -38,11 +38,11 @@ const goal = new Goal(3);
 
 console.log(goal);
 const starsRequirement = [
-  [0, 5],
-  [1, 5],
-  [2, 5],
-  [3, 5],
-  [4, 5],
+  [0, 3],
+  [1, 3],
+  [2, 3],
+  [3, 3],
+  [4, 3],
 ];
 
 const stars = createStars(starsRequirement);
