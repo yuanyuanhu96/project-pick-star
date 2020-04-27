@@ -1,8 +1,11 @@
 const canvas = document.querySelector('.drawing');
 const ctx = canvas.getContext('2d');
 const goalBox = document.querySelector('.goal-box');
+let gameBegin = false;
+//const begin = new Begin();
 
 const moon = new Image();
+
 moon.onload = () => {
   drawMoon();
 };
