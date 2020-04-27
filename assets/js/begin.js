@@ -3,6 +3,7 @@ const beginButton = document.querySelector('#answer');
 
 function begin() {
   popup.style.display = 'none';
+  startGame();
  gameBegin = true;
 
 }

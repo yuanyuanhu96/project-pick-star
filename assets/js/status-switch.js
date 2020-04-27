@@ -1,4 +1,5 @@
 const statusButton = document.querySelector('#status-button');
+const statusTouch = document.querySelector('#touch-area');
 const statusShow = document.querySelector('#status-show');
 
 let status = 0;
@@ -17,3 +18,4 @@ function statusUpdate() {
 }
 
 statusButton.addEventListener('click', nextStatus);
+statusTouch.addEventListener('click', nextStatus);
