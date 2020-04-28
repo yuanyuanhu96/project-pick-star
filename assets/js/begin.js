@@ -1,16 +1,18 @@
-const popup = document.querySelector('.popup');
+const popupBegin = document.querySelector('.popup-begin');
 const beginButton = document.querySelector('#answer');
+const popupEnd = document.querySelector('.popup-end');
 
 function begin() {
-  popup.style.display = 'none';
+  popupBegin.style.display = 'none';
   startGame();
- gameBegin = true;
+  gameBegin = true;
+}
 
+function end() {
+  popupEnd.style.display = 'block';
 }
 
 beginButton.addEventListener('click', begin);
-
-
 
 //I cannot make it work within Class
 

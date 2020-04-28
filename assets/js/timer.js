@@ -13,7 +13,8 @@ function updateTimer() {
   if (time <= 0) {
     clearInterval(timerPID);
     // FIXME: Update this.
-    alert('GAME ENDED');
+    // alert('GAME ENDED');
+    end();
   }
 }
 

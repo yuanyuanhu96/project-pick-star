@@ -1,5 +1,5 @@
 body {
-  background-color: 'gray';
+  background-color: 'gra';
 }
 
 .drawing {
@@ -41,23 +41,40 @@ body {
   padding: 0 0;
 }
 
+
+
+.popup-end {
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: auto auto;
+  display: none;
+}
+
+.center-wrapper {
+  text-align: center;
+  margin-top: 300px;
+}
+
 .question {
-  margin-top: 250px;
+  margin-top: 220px;
   margin-bottom: 40px;
 }
 .answer {
+  width: 160px;
+  height: 60px;
   margin: 50px 0;
-  border-radius: 12px;
-  padding: 5px 18px;
+  border-radius: 30px;
   font-size: 28px;
   transition-duration: 0.4s;
-  background-color: rgb(0, 102, 255);
-  color: #fff;
+  background-color: rgb(0, 72, 181);
+
+  color: rgb(179, 179, 179);
+  border: none;
 }
 
 .answer:hover {
-  background-color: rgb(0, 72, 181);
+  background-color: rgb(0, 102, 255);
   color: #fff;
+  cursor: pointer;
 }
 
 .goal-box-begin {
@@ -80,6 +97,7 @@ body {
 
 .play-pause:hover {
   color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .play {
