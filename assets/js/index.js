@@ -63,6 +63,9 @@ const tick = () => {
   if (status === 3) {
     let rightStar = judgement(claw, goal);
     console.warn('picked the right star?', rightStar);
+    if (rightStar == true) {
+      goal.updateAchieved();
+    }
     status += 1;
   }
 

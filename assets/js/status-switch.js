@@ -2,6 +2,9 @@ const statusButton = document.querySelector('#status-button');
 const statusTouch = document.querySelector('#touch-area');
 const statusShow = document.querySelector('#status-show');
 
+statusButton.style.display = 'none';
+statusShow.style.display = 'none';
+
 let status = 0;
 statusUpdate();
 

@@ -1,4 +1,4 @@
-let time = 60;
+let time = 30;
 
 const timerElement = document.querySelector('.timer');
 const playElement = document.querySelector('.play');

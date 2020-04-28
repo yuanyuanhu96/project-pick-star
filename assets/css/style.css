@@ -71,9 +71,15 @@ body {
 }
 
 .play-pause {
-  font-size: 28px;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 32px;
   font-weight: 900;
-  color: 'white';
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.play-pause:hover {
+  color: rgb(255, 255, 255);
 }
 
 .play {
@@ -95,6 +101,11 @@ body {
 .goal-star {
   display: none;
   width: 60px;
+}
+
+.goal-achieved {
+  padding-left: 30px;
+  justify-self: end;
 }
 
 .level-name {
