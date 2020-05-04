@@ -31,7 +31,7 @@ function togglePlayPause() {
 function startGame(event) {
   timerPID = setInterval(() => {
     updateTimer();
-  }, 1000);
+  }, 100);
 
   togglePlayPause();
 }

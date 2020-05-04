@@ -1,6 +1,5 @@
 const popupBegin = document.querySelector('.popup-begin');
 const beginButton = document.querySelector('#answer');
-const popupEnd = document.querySelector('.popup-end');
 
 function begin() {
   popupBegin.style.display = 'none';
@@ -8,9 +7,7 @@ function begin() {
   gameBegin = true;
 }
 
-function end() {
-  popupEnd.style.display = 'block';
-}
+
 
 beginButton.addEventListener('click', begin);
 
