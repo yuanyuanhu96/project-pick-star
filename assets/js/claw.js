@@ -1,7 +1,10 @@
 class Claw {
   stars;
   status = 0; // 0:Haven't start, 1:turning, 2:growing, 3:pick 4:pickback 5: emptyback 6:starback 7:no star back 8:starRemoved
-  fixedEnd = { x1: 0.5 * canvas.width, y1: 0.5 * canvas.height };
+  fixedEnd = {
+    x1: 0.5 * canvas.width,
+    y1: 0.5 * canvas.height,
+  };
 
   angle;
   initialAngle = 1;
@@ -13,7 +16,10 @@ class Claw {
   growingSpeed = 1;
   growingTime = 0;
 
-  flexibleEnd = { x2: 250, y2: 250 };
+  flexibleEnd = {
+    x2: 250,
+    y2: 250,
+  };
 
   touchStar = false;
 

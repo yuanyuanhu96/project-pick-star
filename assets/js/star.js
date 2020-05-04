@@ -38,31 +38,31 @@ class Star {
     this.star1.onload = () => {
       this.drawStar();
     };
-    this.star1.src = './assets/img/stars/star-01.png';
+    this.star1.src = './assets/img/stars/png/star-01.png';
 
     this.star2 = new Image();
     this.star2.onload = () => {
       this.drawStar();
     };
-    this.star2.src = './assets/img/stars/star-02.png';
+    this.star2.src = './assets/img/stars/png/star-02.png';
 
     this.star3 = new Image();
     this.star3.onload = () => {
       this.drawStar();
     };
-    this.star3.src = './assets/img/stars/star-03.png';
+    this.star3.src = './assets/img/stars/png/star-03.png';
 
     this.star4 = new Image();
     this.star4.onload = () => {
       this.drawStar();
     };
-    this.star4.src = './assets/img/stars/star-04.png';
+    this.star4.src = './assets/img/stars/png/star-04.png';
 
     this.star5 = new Image();
     this.star5.onload = () => {
       this.drawStar();
     };
-    this.star5.src = './assets/img/stars/star-05.png';
+    this.star5.src = './assets/img/stars/png/star-05.png';
   }
 
   drawStar() {

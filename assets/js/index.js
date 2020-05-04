@@ -33,7 +33,7 @@ function drawRabbits() {
     0.5 * canvas.width - 90,
     0.5 * canvas.height - 90,
     180,
-    90
+    95
   );
 }
 
