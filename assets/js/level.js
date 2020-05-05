@@ -23,14 +23,6 @@ class Level {
       this.claw.tick();
       //claw.status different from status
       // console.log("claw.status", claw.status);
-      if (status === 3) {
-        let rightStar = this.judgement();
-        console.warn('picked the right star?', rightStar);
-        if (rightStar == true) {
-          this.goal.updateAchieved();
-        }
-        status = 4;
-      }
 
       for (var i = 0; i < this.stars.length; i++) {
         this.stars[i].tick();
@@ -41,6 +33,14 @@ class Level {
     };
 
     tick();
+  }
+
+  uponPick() {
+    let rightStar = this.judgement();
+    console.warn('picked the right star?', rightStar);
+    if (rightStar == true) {
+      this.goal.updateAchieved();
+    }
   }
 
   judgement() {

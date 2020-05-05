@@ -31,7 +31,7 @@ class Claw {
     this.draw();
   }
 
-  statusCheck() {
+  clawChanging() {
     if (status === 1) {
       this.turningTime += 1;
     }
@@ -41,16 +41,6 @@ class Claw {
 
     if (status === 4 || status === 5) {
       this.growingTime -= 1;
-    }
-    if (status === 6) {
-      this.removeStar();
-      status = 0;
-      this.growingTime = 0;
-    }
-
-    if (status === 7) {
-      status = 0;
-      this.growingTime = 0;
     }
   }
 
@@ -64,6 +54,8 @@ class Claw {
       if (status === 5) {
         status = 7;
       }
+
+      this.clawReturned();
       //  concole.log(growingTime);
     }
 
@@ -104,15 +96,14 @@ class Claw {
     for (var i = 0; i < this.stars.length; i++) {
       let distanceX = Math.abs(this.stars[i].x - this.flexibleEnd.x2);
       let distanceY = Math.abs(this.stars[i].y - this.flexibleEnd.y2);
-      if (distanceX < 20 && distanceY < 20) {
+
+      if (status == 2 && distanceX < 20 && distanceY < 20) {
         this.touchStar = true;
-        status = 3; //定义域是什么
-        console.log('touch star?', this.touchStar);
-
-        this.starPicked = this.stars[i];
-        console.log('picked', this.starPicked);
-
         this.starPickedId = i;
+        this.starPicked = this.stars[i];
+        level.uponPick();
+        this.moveStar();
+        status = 4;
       }
     }
   }
@@ -129,8 +120,21 @@ class Claw {
     this.starPickedId = null;
   }
 
+  clawReturned() {
+    if (status === 6) {
+      this.removeStar();
+      status = 0;
+      this.growingTime = 0;
+    }
+
+    if (status === 7) {
+      status = 0;
+      this.growingTime = 0;
+    }
+  }
+
   tick() {
-    this.statusCheck();
+    this.clawChanging();
     this.length = this.getLength();
     this.angle = this.getAngle();
     this.getEnd();
@@ -142,7 +146,6 @@ class Claw {
 
     if (status === 4) {
       this.moveStar();
-      level.judgement();
     }
   }
 }

@@ -18,8 +18,6 @@ class Timer {
 
     if (this.time <= 0) {
       clearInterval(this.timerPID);
-      // FIXME: Update this.
-      // alert('GAME ENDED');
       end();
     }
   }
@@ -37,7 +35,7 @@ class Timer {
   startGame(event) {
     this.timerPID = setInterval(() => {
       this.updateTimer();
-    }, 500);
+    }, 100);
 
     this.togglePlayPause();
   }
