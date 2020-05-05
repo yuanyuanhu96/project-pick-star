@@ -20,8 +20,8 @@ function randomCoordinate() {
 //
 function checkRange(coordinate, stars) {
   const r = 20;
-  let realWidth = canvas.width - 2 * r;
-  let realHeight = canvas.height - 2 * r;
+  const realWidth = canvas.width - 2 * r;
+  const realHeight = canvas.height - 2 * r;
 
   let x = coordinate[0];
   let y = coordinate[1];
@@ -87,11 +87,11 @@ function createStars(starsRequirement, pickedCoordinate) {
 
 */
 function createStars(starsRequirement) {
-  let stars = [];
+  const stars = [];
 
   starsRequirement.forEach((element) => {
-    let type = element[0];
-    let number = element[1];
+    const type = element[0];
+    const number = element[1];
 
     for (var i = 0; i < number; i++) {
       stars.push(new Star(type, 20));

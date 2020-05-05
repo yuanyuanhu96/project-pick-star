@@ -31,15 +31,22 @@ class Claw {
     this.draw();
   }
 
+  nextStatus() {
+    if (this.status <= 1) {
+      this.status += 1;
+    }
+    return this.status;
+  }
+
   clawChanging() {
-    if (status === 1) {
+    if (this.status === 1) {
       this.turningTime += 1;
     }
-    if (status === 2) {
+    if (this.status === 2) {
       this.growingTime += 1;
     }
 
-    if (status === 4 || status === 5) {
+    if (this.status === 4 || this.status === 5) {
       this.growingTime -= 1;
     }
   }
@@ -48,11 +55,11 @@ class Claw {
     let length = this.initialLength + this.growingSpeed * this.growingTime;
 
     if (length <= this.initialLength) {
-      if (status === 4) {
-        status = 6;
+      if (this.status === 4) {
+        this.status = 6;
       }
-      if (status === 5) {
-        status = 7;
+      if (this.status === 5) {
+        this.status = 7;
       }
 
       this.clawReturned();
@@ -76,7 +83,7 @@ class Claw {
       this.flexibleEnd.y2 <= 0 ||
       this.flexibleEnd.y2 >= canvas.height
     ) {
-      status = 5;
+      this.status = 5;
     }
   }
 
@@ -97,13 +104,13 @@ class Claw {
       let distanceX = Math.abs(this.stars[i].x - this.flexibleEnd.x2);
       let distanceY = Math.abs(this.stars[i].y - this.flexibleEnd.y2);
 
-      if (status == 2 && distanceX < 20 && distanceY < 20) {
+      if (this.status == 2 && distanceX < 20 && distanceY < 20) {
         this.touchStar = true;
         this.starPickedId = i;
         this.starPicked = this.stars[i];
         level.uponPick();
         this.moveStar();
-        status = 4;
+        this.status = 4;
       }
     }
   }
@@ -121,14 +128,14 @@ class Claw {
   }
 
   clawReturned() {
-    if (status === 6) {
+    if (this.status === 6) {
       this.removeStar();
-      status = 0;
+      this.status = 0;
       this.growingTime = 0;
     }
 
-    if (status === 7) {
-      status = 0;
+    if (this.status === 7) {
+      this.status = 0;
       this.growingTime = 0;
     }
   }
@@ -140,11 +147,11 @@ class Claw {
     this.getEnd();
     this.draw();
 
-    if (status === 2) {
+    if (this.status === 2) {
       this.ifTouchStar();
     }
 
-    if (status === 4) {
+    if (this.status === 4) {
       this.moveStar();
     }
   }

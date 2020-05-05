@@ -27,8 +27,8 @@ class Level {
       for (var i = 0; i < this.stars.length; i++) {
         this.stars[i].tick();
       }
-      console.log('status', status);
-      statusUpdate();
+      console.log('status', this.claw.status);
+
       window.requestAnimationFrame(tick);
     };
 

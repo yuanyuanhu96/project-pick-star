@@ -1,5 +1,4 @@
 class Background {
-    
   constructor() {
     this.moon = new Image();
     this.moon.onload = () => {
