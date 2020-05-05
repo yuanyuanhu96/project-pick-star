@@ -3,7 +3,7 @@ const beginButton = document.querySelector('#answer');
 
 function begin() {
   popupBegin.style.display = 'none';
-  startGame();
+  level.timer.startGame();
   gameBegin = true;
 }
 

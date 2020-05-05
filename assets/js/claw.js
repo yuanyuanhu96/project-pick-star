@@ -26,14 +26,7 @@ class Claw {
   starPicked;
   starPickedId;
 
-  constructor(
-    stars,
-    status,
-    turningSpeed,
-    turningTime,
-    growingSpeed,
-    growingTime
-  ) {
+  constructor(stars) {
     this.stars = stars;
     this.draw();
   }
@@ -108,7 +101,7 @@ class Claw {
 
   ifTouchStar() {
     //need to end while true
-    for (var i = 0; i < stars.length; i++) {
+    for (var i = 0; i < this.stars.length; i++) {
       let distanceX = Math.abs(this.stars[i].x - this.flexibleEnd.x2);
       let distanceY = Math.abs(this.stars[i].y - this.flexibleEnd.y2);
       if (distanceX < 20 && distanceY < 20) {
@@ -148,7 +141,7 @@ class Claw {
 
     if (status === 4) {
       this.moveStar();
-      judgement(this, goal);
+      level.judgement();
     }
   }
 }
