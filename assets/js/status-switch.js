@@ -10,7 +10,10 @@ statusUpdate();
 
 function nextStatus() {
   status = parseInt(status, 10);
-  status += 1;
+
+  if (status <= 1) {
+    status += 1;
+  }
   statusShow.innerText = status;
 
   //claw.status = status; // who send to whom

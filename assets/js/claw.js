@@ -11,7 +11,7 @@ class Claw {
   turningSpeed = 0.05;
   turningTime = 0;
 
-  length;
+  length = 80;
   initialLength = 80;
   growingSpeed = 1;
   growingTime = 0;
@@ -57,7 +57,7 @@ class Claw {
   getLength() {
     let length = this.initialLength + this.growingSpeed * this.growingTime;
 
-    if (length < this.initialLength) {
+    if (length <= this.initialLength) {
       if (status === 4) {
         status = 6;
       }
@@ -126,6 +126,7 @@ class Claw {
   removeStar() {
     let i = this.starPickedId;
     let removedStar = this.stars.splice(i, 1);
+    this.starPickedId = null;
   }
 
   tick() {

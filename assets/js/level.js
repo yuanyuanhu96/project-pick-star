@@ -29,7 +29,7 @@ class Level {
         if (rightStar == true) {
           this.goal.updateAchieved();
         }
-        status += 1;
+        status = 4;
       }
 
       for (var i = 0; i < this.stars.length; i++) {

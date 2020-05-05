@@ -2,7 +2,9 @@ const popupEnd = document.querySelector('.popup-end');
 const nextButton = document.querySelector('#next-level');
 
 function end() {
+  status = 0;
   popupEnd.style.display = 'block';
+  level.claw.removeStar();
 }
 
 function next() {
