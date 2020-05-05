@@ -35,7 +35,7 @@ class Timer {
   startGame(event) {
     this.timerPID = setInterval(() => {
       this.updateTimer();
-    }, 100);
+    }, 1000);
 
     this.togglePlayPause();
   }
