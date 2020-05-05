@@ -4,6 +4,8 @@ class Goal {
   achiveGoal;
   achivedNumberElement;
   achivedNumber;
+  starElement;
+  starElementBegin;
 
   constructor(totalType) {
     this.totalType = totalType;
@@ -13,10 +15,10 @@ class Goal {
 
     console.log(`goal is ${this.type}`);
     //选择HTML中的element展示
-    const starElement = document.querySelector(
+    this.starElement = document.querySelector(
       `.goal-box .goal-star-${this.type + 1}`
     );
-    const starElement2 = document.querySelector(
+    this.starElementBegin = document.querySelector(
       `.goal-box-begin .goal-star-${this.type + 1}`
     );
     this.achivedNumberElement = document.querySelector('.goal-achieved');
@@ -24,8 +26,8 @@ class Goal {
     this.achivedNumber = parseInt(this.achivedNumber, 10);
     console.log('achivedNumber = ', this.achivedNumber);
 
-    starElement.style.display = 'block';
-    starElement2.style.display = 'block';
+    this.starElement.style.display = 'block';
+    this.starElementBegin.style.display = 'block';
   }
 
   //函数里面只要写右边的表达式
@@ -38,5 +40,10 @@ class Goal {
   updateAchieved() {
     this.achivedNumber += 1;
     this.achivedNumberElement.innerText = this.achivedNumber;
+  }
+
+  hide() {
+    this.starElement.style.display = 'none';
+    this.starElementBegin.style.display = 'none';
   }
 }

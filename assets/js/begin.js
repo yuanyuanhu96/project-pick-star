@@ -7,8 +7,6 @@ function begin() {
   gameBegin = true;
 }
 
-
-
 beginButton.addEventListener('click', begin);
 
 //I cannot make it work within Class

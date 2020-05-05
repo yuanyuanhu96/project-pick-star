@@ -7,7 +7,12 @@ function end() {
 
 function next() {
   popupEnd.style.display = 'none';
+  level.goal.hide();
   level = new Level();
+  levelId += 1;
+  levelBox.innerText = `Level ${levelId}`;
+
+  popupBegin.style.display = 'block';
 }
 
 nextButton.addEventListener('click', next);
