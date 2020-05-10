@@ -10,7 +10,6 @@ class Goal {
   constructor(totalType) {
     this.totalType = totalType;
     this.achiveGoal = false;
-
     this.type = this.generateGoal(this.totalType);
 
     console.log(`goal is ${this.type}`);
@@ -21,10 +20,12 @@ class Goal {
     this.starElementBegin = document.querySelector(
       `.goal-box-begin .goal-star-${this.type + 1}`
     );
+
     this.achivedNumberElement = document.querySelector('.goal-achieved');
-    this.achivedNumber = this.achivedNumberElement.innerText;
+    this.achivedNumber = 0;
     this.achivedNumber = parseInt(this.achivedNumber, 10);
-    console.log('achivedNumber = ', this.achivedNumber);
+    this.achivedNumberElement.innerText = this.achivedNumber;
+
 
     this.starElement.style.display = 'block';
     this.starElementBegin.style.display = 'block';

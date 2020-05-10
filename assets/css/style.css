@@ -44,7 +44,8 @@ body {
   padding: 0 0;
 }
 
-.popup-end {
+.popup-end,
+ .popup-lose {
   background-color: rgba(0, 0, 0, 0.9);
   margin: auto auto;
   display: none;
@@ -130,6 +131,8 @@ body {
 .level-name {
   text-align: center;
 }
+
+
 
 .touch-area {
   position: absolute;

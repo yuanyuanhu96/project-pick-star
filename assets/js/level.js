@@ -16,6 +16,8 @@ class Level {
 
     this.bubbleAudio = document.createElement('audio');
     this.bubbleAudio.src = 'assets/audio/bubble.mp3';
+    this.rightAudio = document.createElement('audio');
+    this.rightAudio.src = 'assets/audio/right.mp3';
 
     this.stars = createStars(starsRequirement);
     this.claw = new Claw(this.stars);
@@ -55,6 +57,10 @@ class Level {
     console.warn('picked the right star?', rightStar);
     if (rightStar == true) {
       this.goal.updateAchieved();
+      this.rightAudio.play();
+    }
+
+    if (rightStar == false) {
       this.bubbleAudio.play();
     }
   }

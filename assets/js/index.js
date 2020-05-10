@@ -6,6 +6,8 @@ const popupBegin = document.querySelector('.popup-begin');
 const beginButton = document.querySelector('#answer');
 const popupEnd = document.querySelector('.popup-end');
 const nextButton = document.querySelector('#next-level');
+const popupLose = document.querySelector('.popup-lose');
+const restartButton = document.querySelector('#restart');
 
 const statusTouch = document.querySelector('#touch-area');
 //const statusShow = document.querySelector('#status-show');
@@ -24,8 +26,23 @@ function begin() {
 
 function end() {
   level.claw.status = 0;
-  popupEnd.style.display = 'block';
   level.claw.removeStar();
+  let win = ifWin();
+  if (win === true) {
+    popupEnd.style.display = 'block';
+  } else {
+    popupLose.style.display = 'block';
+  }
+
+  totalStar();
+}
+
+function ifWin() {
+  if (level.goal.achivedNumber > 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function next() {
