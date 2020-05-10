@@ -8,6 +8,14 @@ class Level {
       [3, 3],
       [4, 3],
     ];
+    //Play audio
+    this.backgroundAudio = document.createElement('audio');
+    this.backgroundAudio.src = './assets/audio/main.mp3';
+    this.backgroundAudio.pause();
+    this.backgroundAudio.play();
+
+    this.bubbleAudio = document.createElement('audio');
+    this.bubbleAudio.src = 'assets/audio/bubble.mp3';
 
     this.stars = createStars(starsRequirement);
     this.claw = new Claw(this.stars);
@@ -35,18 +43,19 @@ class Level {
     tick();
   }
 
-  uponPick() {
-    let rightStar = this.judgement();
-    console.warn('picked the right star?', rightStar);
-    if (rightStar == true) {
-      this.goal.updateAchieved();
-    }
-  }
-
   judgement() {
     if (this.claw.starPicked.type === this.goal.type) {
       return true;
     }
     return false;
+  }
+
+  uponPick() {
+    let rightStar = this.judgement();
+    console.warn('picked the right star?', rightStar);
+    if (rightStar == true) {
+      this.goal.updateAchieved();
+      this.bubbleAudio.play();
+    }
   }
 }
