@@ -10,7 +10,6 @@ const popupLose = document.querySelector('.popup-lose');
 const restartButton = document.querySelector('#restart');
 
 const statusTouch = document.querySelector('#touch-area');
-//const statusShow = document.querySelector('#status-show');
 
 let level = new Level();
 
@@ -25,6 +24,7 @@ function begin() {
 }
 
 function end() {
+
   level.claw.status = 0;
   level.claw.removeStar();
   let win = ifWin();
@@ -33,8 +33,6 @@ function end() {
   } else {
     popupLose.style.display = 'block';
   }
-
-  totalStar();
 }
 
 function ifWin() {

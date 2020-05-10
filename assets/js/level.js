@@ -13,7 +13,7 @@ class Level {
     this.backgroundAudio.src = './assets/audio/main.mp3';
     this.backgroundAudio.pause();
     this.backgroundAudio.play();
-
+    //load sound effect
     this.bubbleAudio = document.createElement('audio');
     this.bubbleAudio.src = 'assets/audio/bubble.mp3';
     this.rightAudio = document.createElement('audio');
@@ -23,16 +23,11 @@ class Level {
     this.claw = new Claw(this.stars);
     this.background = new Background();
     this.timer = new Timer();
-    //this.begin = new Begin();
-
-    //const pickedCoordinate = starCoordinate();
 
     const tick = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       this.background.tick();
       this.claw.tick();
-      //claw.status different from status
-      // console.log("claw.status", claw.status);
 
       for (var i = 0; i < this.stars.length; i++) {
         this.stars[i].tick();

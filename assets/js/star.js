@@ -28,9 +28,7 @@ class Star {
       this.y = this.coordinate[1];
     }
 
-    //console.log(this);
     this.loadImages();
-    // this.drawCircle();
   }
 
   loadImages() {
@@ -96,6 +94,15 @@ class Star {
     ctx.drawImage(starImg, this.x - 40, this.y - 40, 80, 80);
   }
 
+  tick() {
+    this.drawStar();
+  }
+}
+
+
+
+
+
   // drawCircle() {
   //   ctx.beginPath();
   //   ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
@@ -125,9 +132,3 @@ class Star {
   //   ctx.lineWidth = 2;
   //   ctx.stroke();
   // }
-
-  tick() {
-    //this.drawCircle();
-    this.drawStar();
-  }
-}
